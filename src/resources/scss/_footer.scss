@@ -1,0 +1,14 @@
+.footer {
+    background-color: $primary-color;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    p {
+        line-height: 45px;
+    }
+    a {
+        line-height: 30px;
+        color: red;
+    }
+}

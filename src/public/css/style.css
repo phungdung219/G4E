@@ -45,15 +45,51 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.container {
+  max-width: 1000px; }
+
+.header__top {
+  background-color: #f0f2f5; }
+
 .header__main {
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-bottom: 30px;
+  background-color: #f0f2f5; }
 
 .header__logo {
-  width: 100px;
-  height: 40px; }
+  width: 200px;
+  height: 100px; }
 
 .header__social {
   display: flex;
   gap: 0 30px; }
+  .header__social__item {
+    font-size: 40px; }
+
+.header__nav {
+  background-color: #3D6EF7; }
+  .header__nav .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .header__nav .nav-item {
+      padding: 7px 10px; }
+      .header__nav .nav-item:hover {
+        background-color: #3c59a8; }
+    .header__nav .nav-link {
+      color: white; }
+  .header__nav .dropdown-menu li {
+    padding: 5px 10px; }
+
+.footer {
+  background-color: #3D6EF7;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .footer p {
+    line-height: 45px; }
+  .footer a {
+    line-height: 30px;
+    color: red; }

@@ -10,31 +10,91 @@
 </head>
 <body>
     <div class="app" >
-        <header>
-            <div class="container">
-                <div class="header__main">
-                    <img class="header__logo" src="/img/logo.png" alt="">
-                    <div class="header__social">
-                        <div class="header__social__item"><a class="header__social__link"  href="http://">face</a></div>
-                        <div class="header__social__item"><a class="header__social__link" href="http://">tw</a></div>
-                        <div class="header__social__item"><a class="header__social__link" href="http://">youtube</a></div>
-                        <div class="header__social__item"><a class="header__social__link" href="http://">gmail</a></div>
+        <header class="header">
+            <div class="header__top">
+                    <div class="container">
+                        <div class="header__main">
+                            <img class="header__logo" src="/img/logo.png" alt="">
+                            <div class="header__social">
+                                <div class="header__social__item"><a class="header__social__link"  href="http://"><ion-icon name="logo-facebook"></ion-icon></a></div>
+                                <div class="header__social__item"><a class="header__social__link" href="http://"><ion-icon name="logo-twitter"></ion-icon></a></div>
+                                <div class="header__social__item"><a class="header__social__link" href="http://"><ion-icon name="logo-youtube"></ion-icon></a></div>
+                                <div class="header__social__item"><a class="header__social__link" href="http://"><ion-icon name="logo-google"></ion-icon></a></div>
+                            </div>
                     </div>
                 </div>
             </div> 
+            <div class="header__nav">
+                <div class="container">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">INTRODUCING</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">CONTACT</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">SERVICE</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">DOMESTIC WORKER</a></li>
+                                <li><a class="dropdown-item" href="#">BABYSISTER </a></li>
+                                <li><a class="dropdown-item" href="#">ELDER HELPER</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">SEE ALL</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">RECRUITMENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">VIP SERVICE</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </header>
 
         <div class="container">
             {{{body}}}
         </div>
 
-        <footer>
-            <h1>FOOTER</h1>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__desc">
+                    <p>CÔNG TY TNHH ĐẦU TƯ DỊCH VỤ DHB <br>
+
+                        Trụ sở chính - GV4E - GIÚP VIỆC Ở LẠI HÀNG ĐẦU VIỆT NAM <br>
+
+                        Hà Nội : Số 25 ngõ 62 Trần Bình - Mai Dịch - Cầu Giấy - Hà Nội <br>
+
+                        Hồ Chí Minh: Số 53/2/24 Bình Lợi - Phường 13 - Bình Thạnh - Hồ Chí Minh <br>
+                    </p>
+
+                    <div class="footer__about">
+                        <div class="footer__email">
+                            <span>Email: </span> <a href="">gv4e@gmail.com</a>
+                        </div>
+                        <div class="footer__website">
+                            <span>Website: </span> <a href="">gv4e.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
 
 
+    {{!-- Setting ionicons --}}
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    {{!-- Setting bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
 </body>
