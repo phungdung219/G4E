@@ -1,0 +1,14 @@
+.header__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    width: 100px;
+    height: 40px;
+}
+.header__social {
+    display: flex;
+    gap: 0 30px;
+}
