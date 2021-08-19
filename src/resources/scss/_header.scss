@@ -23,7 +23,6 @@
     }
     &__nav {
         background-color: $primary-color;
-        
         .nav {
             display: flex;
             justify-content: space-around;
@@ -42,6 +41,7 @@
         }
         .dropdown-menu li {
             padding: 5px 10px;
+            
         }
     }
 

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="/js/common.js"></script>
     <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
@@ -28,13 +30,13 @@
                 <div class="container">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#">HOME</a>
+                            <a class="nav-link " aria-current="page" href="/">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#">INTRODUCING</a>
+                            <a class="nav-link " aria-current="page" href="/introduce">INTRODUCING</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#">NEWS</a>
+                            <a class="nav-link " aria-current="page" href="/news">NEWS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page" href="#">CONTACT</a>
@@ -60,9 +62,11 @@
             </div>
         </header>
 
-        <div class="container">
-            {{{body}}}
-        </div>
+        <main class="main">
+            <div class="container">
+                {{{body}}}
+            </div>
+        </main>
 
         <footer class="footer">
             <div class="container">
@@ -84,6 +88,10 @@
                             <span>Website: </span> <a href="">gv4e.com</a>
                         </div>
                     </div>
+                    
+                </div>
+                <div class="footer__map">
+                    <div id="map"></div>
                 </div>
             </div>
         </footer>
@@ -92,10 +100,16 @@
 
 
     {{!-- Setting ionicons --}}
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></scrip>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     {{!-- Setting bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    
+    {{!-- Setting google map --}}
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXWBp4kOB0H8qHmpHhjHLtE7XvQBJwTcA&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
 </body>
 </html>

@@ -4,9 +4,9 @@ const morgan = require('morgan')
 const path = require('path');
 const app = express();
 const port = 3000
-
 const route = require('./routes')
 
+// Xac dinh tuyen duong
 app.use(express.static(path.join(__dirname, 'public')));
 
 // HTTP loger

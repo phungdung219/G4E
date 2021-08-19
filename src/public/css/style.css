@@ -48,6 +48,10 @@ table {
 .container {
   max-width: 1000px; }
 
+.main {
+  min-height: 400px; }
+
+/* Optional: Makes the sample page fill the window. */
 .header__top {
   background-color: #f0f2f5; }
 
@@ -85,11 +89,19 @@ table {
 
 .footer {
   background-color: #3D6EF7;
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
+  width: 100%;
+  color: white; }
+  .footer__desc {
+    padding-top: 30px; }
   .footer p {
     line-height: 45px; }
   .footer a {
     line-height: 30px;
     color: red; }
+  .footer__map {
+    padding-top: 40px;
+    padding-bottom: 30px; }
+  .footer #map {
+    height: 300px;
+    width: 700px;
+    margin: 0 auto; }

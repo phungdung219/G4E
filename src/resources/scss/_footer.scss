@@ -1,14 +1,24 @@
 .footer {
     background-color: $primary-color;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     color: white;
+    &__desc {
+        padding-top: 30px;
+    }
     p {
         line-height: 45px;
     }
     a {
         line-height: 30px;
         color: red;
+    }
+    &__map {
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+    #map {
+        height: 300px;
+        width: 700px;
+        margin: 0 auto;
     }
 }
