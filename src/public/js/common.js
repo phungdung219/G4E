@@ -1,5 +1,5 @@
+//Init Mapp
 let map;
-
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 20.980681, lng: 105.796186 },
@@ -21,3 +21,6 @@ function initMap() {
         infowindow.open(map,marker);
         });
 }
+
+// Fixed Navbar
+let nav=document.getElementById()

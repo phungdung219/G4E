@@ -105,3 +105,6 @@ table {
     height: 300px;
     width: 700px;
     margin: 0 auto; }
+
+.main__home h1 {
+  color: red; }

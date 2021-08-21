@@ -5,9 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --inspect src/index.js",
-    "watch": "node-sass src/resources/scss/style.scss src/public/css/style.css",
-    "build-css": "node-sass src/resources/scss/ --output src/public/css/",
     "watch": "nodemon -e scss -x npm run build-css",
+    "build-css": "node-sass src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,7 +25,8 @@
   "homepage": "https://github.com/phungdung219/G4E#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3"
+    "express-handlebars": "^5.3.3",
+    "mongoose": "^5.13.7"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

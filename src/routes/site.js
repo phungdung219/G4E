@@ -4,7 +4,9 @@ const router = express.Router()
 const siteController= require('../app/controllers/SiteController')
 
 
-router.use('/news', siteController.getNews)
-router.use('/', siteController.index)
+router.get('/news', siteController.getNews)
+router.get('/service', siteController.getService)
+
+router.get('/', siteController.index)
 
 module.exports= router

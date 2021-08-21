@@ -4,7 +4,7 @@ const router = express.Router()
 const introduceController= require('../app/controllers/IntroduceController')
 
 
-router.use('/detail', introduceController.show)
-router.use('/', introduceController.index)
+router.get('/detail', introduceController.show)
+router.get('/', introduceController.index)
 
 module.exports= router
