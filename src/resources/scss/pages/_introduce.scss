@@ -1,0 +1,42 @@
+.main__introduce{
+    .title__sub {
+    font-weight: bold;
+    font-size: 23px;
+    font-style: italic;
+    }
+    .member__img {
+        width: 286px;
+        height: 180px;
+        object-fit: cover;
+    }
+    h1{
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    h2{
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    h3{
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    h4{
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    h5{
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    h9{
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 26px;
+    }
+}
