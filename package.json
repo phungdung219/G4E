@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect src/index.js",
+    "start": "nodemon --inspect src/index.js watch browser-sync start --server --files",
     "watch": "nodemon -e scss -x npm run build-css",
     "build-css": "node-sass src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,9 +24,14 @@
   },
   "homepage": "https://github.com/phungdung219/G4E#readme",
   "dependencies": {
+    "browser-sync": "^2.27.5",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
-    "mongoose": "^5.13.7"
+    "jquery": "^3.6.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.7",
+    "mongoose-delete": "^0.5.3",
+    "mongoose-slug-generator": "^1.0.4"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

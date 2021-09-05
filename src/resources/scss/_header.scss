@@ -21,28 +21,23 @@
             font-size: 40px;
         }
     }
-    &__nav {
-        background-color: $primary-color;
-        .nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+}
 
-            &-item {
-                padding: 7px 10px;
-                
-                &:hover {
-                background-color: #3c59a8;
-                }
-            }
-            &-link {
-                color: white;
-            }
-        }
-        .dropdown-menu li {
-            padding: 5px 10px;
-            
+
+.navbar {
+    .nav-item {
+        text-align: center;
+        color: white;
+        padding: 0 10px;
+        &:hover {
+            background-color: #2255e0;
         }
     }
-
+    .nav-link{
+        color: white;
+    }
+    .btn {
+        color: white;
+        border-color: white;
+    }
 }

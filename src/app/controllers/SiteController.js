@@ -1,15 +1,17 @@
 const Worker = require('../models/Worker')
+const { manyMongooseToObject } = require('../../util/mongoose')
 
 class SiteController {
 
     //[get] / home
     index(req, res, next) {
 
-        // Worker.find({})
-        //     .then(workers => res.json(workers))
-        //     .catch(next)
-
-        res.render('home');
+        Worker.find({})
+            .then(workers => res.render('home', {
+                workers: manyMongooseToObject(workers)
+            }))
+            .catch(next)
+        // 
     }
 
     //[get] / news

@@ -22,5 +22,10 @@ function initMap() {
         });
 }
 
-// Fixed Navbar
-let nav=document.getElementById()
+// <!-- Initialize Swiper -->
+var swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+

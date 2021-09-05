@@ -1,3 +1,32 @@
 <div class="main__home">
-    <h1>Home page</h1>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt=""></div>
+        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" alt=""></div>
+        <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt=""></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="container">
+        <h1>ALL WORKERS</h1>
+        <div class="row mt-4 ">
+            {{#each workers}}
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card" style="border:red 1px solid">
+                    <a href="/workers/{{this.slug}}"><img src="{{this.img}}" class="card-img-top member__img" alt="worker"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <h5 class="card-title">{{this.birth}}</h5>
+                        <h5 class="card-title">{{this.from}}</h5>
+                        <p class="card-text">{{this.experience}}</p>
+                        <a href="/workers/{{this.slug}}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div> 
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    
+    
 </div>
