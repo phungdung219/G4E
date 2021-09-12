@@ -82,7 +82,7 @@
 
 .main__home .swiper-slide img {
   display: block;
-  width: 100%;
+  width: 70vw;
   height: 80vh;
   object-fit: cover; }
 
@@ -93,3 +93,41 @@
   width: 100%;
   height: 180px;
   object-fit: cover; }
+
+.main__introduce .title__sub {
+  font-weight: bold;
+  font-size: 23px;
+  font-style: italic; }
+
+.main__introduce .member__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; }
+
+.main__introduce .card {
+  border: #3D6EF7 1px solid; }
+
+.main__introduce h1 {
+  color: #3D6EF7;
+  font-weight: bold;
+  font-size: 40px; }
+
+.main__introduce h2 {
+  color: #3D6EF7;
+  font-weight: bold;
+  font-size: 26px; }
+
+.main__introduce h3 {
+  color: #3D6EF7;
+  font-weight: bold;
+  font-size: 26px; }
+
+.main__introduce h4 {
+  color: #3D6EF7;
+  font-weight: bold;
+  font-size: 26px; }
+
+.main__introduce h5 {
+  color: #3D6EF7;
+  font-weight: bold;
+  font-size: 26px; }

@@ -5,6 +5,7 @@
           <thead>
               <tr>
               <th scope="col">#</th>
+              <th scope="col">Id</th>
               <th scope="col">Name</th>
               <th scope="col">Birth</th>
               <th scope="col" colspan="2">From</th>
@@ -14,6 +15,7 @@
               {{#each workers}}
               <tr>
               <th scope="row">{{sum @index 1}}</th>
+                  <td>{{this._id}}</td>
                   <td>{{this.name}}</td>
                   <td>{{this.birth}}</td>
                   <td>{{this.from}}</td>
