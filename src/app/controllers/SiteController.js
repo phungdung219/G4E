@@ -24,6 +24,11 @@ class SiteController {
         res.render('service')
     }
 
+    //[get] / about
+    getAbout(req,res) {
+        res.render('about')
+    }
+
 }
 
 module.exports = new SiteController
