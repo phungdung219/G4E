@@ -1,0 +1,31 @@
+.main__news {
+    .container {
+        box-shadow: $container-shadow;
+    }
+    .news_title {
+        margin-bottom: 30px;
+        color: $primary-color;
+    }
+    .news_card {
+        display: grid;
+        grid-template-columns: 30%  70%;
+        gap: 20px;
+        padding: 30px;
+    }
+    .post_info {
+        box-shadow:  rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 5px 10px;
+        a {
+            text-decoration: none;
+        }
+    }
+   
+    img {
+        width: 100%;
+    }
+    .page_bottom {
+        justify-content: end;
+        margin-bottom: 50px;
+        padding-bottom: 50px ;
+    }
+}

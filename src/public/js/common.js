@@ -29,3 +29,26 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+//Chat real-time
+var socket = io();
+var messages = document.getElementById('messages');
+var form = document.getElementById('form');
+var input = document.getElementById('input');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var named = prompt('Họ và tên của bạn ạ <3')
+    const message= input.value;
+    if (input.value && named ) {
+    socket.emit('chat message', {message, named});
+    input.value = '';
+    }
+});
+
+socket.on('chat message', function(msg) {
+    var item = document.createElement('li');
+    item.textContent = `${msg.named}:  ${msg.message}`;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+});
+

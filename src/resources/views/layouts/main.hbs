@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
     <link rel="stylesheet" href="/css/style.css">
     <link
       rel="stylesheet"
@@ -32,6 +32,7 @@
             </div> 
         </header>
 
+        
         <main class="main">
             <nav class="navbar sticky-top navbar-expand-lg justify-content-center " style="background-color: #3D6EF7;">
                 <ul class="navbar-nav">
@@ -58,12 +59,11 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle h5" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Nhân viên 
+                            Admin 
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/workers/create">Tạo nhân viên</a></li>
                             <li><a class="dropdown-item" href="/admin/stored/workers">Cập nhật nhân viên</a></li>
-                            
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">SEE ALL</a></li>
                         </ul>
@@ -76,10 +76,35 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                <div>
+                    <a style="color: #fff;margin-left:20px" href="/login">Đăng nhập</a> 
+                </div>
             </nav>
-            
-            
+
+            <div class="direct_contact">
+                <h2 class="contact_title">
+                    Hỗ trợ trực tuyến
+                </h2>
+                <div class="contact_img">
+                    <img src="https://giupviec88.com/Design/images/online-help.jpg" alt="">
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Hotline - 0911703000 - 0961004301</li>
+                    <li class="list-group-item">CSKH - 0911703000 - 0961004301</li>
+                </ul>
+            </div>
+
             {{{body}}}
+
+
+
+            <div class="box-chat" style="padding-bottom: 20px;">
+                <h4 style="color: #3D6EF7"> Hãy gửi phản hồi cho chúng tôi</h4>
+                <ul id="messages"></ul>
+                <form id="form" action="">
+                    <input id="input" autocomplete="off" /><button>Send</button>
+                </form>
+            </div>
         </main>
 
         <footer class="footer">
@@ -112,8 +137,10 @@
     </div>
 
 
+    
 
     {{!-- Setting ionicons --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></scrip>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     {{!-- Setting bootstrap --}}
@@ -121,7 +148,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    
+    
+    <script src="/socket.io/socket.io.js" > </script>
 
+    
     <script src="/js/common.js"></script>
 
     {{!-- Setting google map --}}

@@ -4,6 +4,9 @@
     font-size: 23px;
     font-style: italic;
     }
+    .container {
+        box-shadow: $container-shadow;
+    }
     .member__img {
         width: 100%;
         height: 180px;
