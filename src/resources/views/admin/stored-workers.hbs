@@ -1,0 +1,78 @@
+<div class="mt-4">
+    <div class="container">
+      <h1>Tất cả nhân viên</h1>
+      <table class="table">
+          <thead>
+              <tr>
+              <th scope="col">#</th>
+              <th scope="col">Số ID</th>
+              <th scope="col">Tên</th>
+              <th scope="col">Năm sinh</th>
+              <th scope="col" colspan="2">Khu vực</th>
+              </tr>
+          </thead>
+          <tbody>
+              {{#each workers}}
+              <tr>
+              <th scope="row">{{sum @index 1}}</th>
+                  <td>{{this._id}}</td>
+                  <td>{{this.name}}</td>
+                  <td>{{this.birth}}</td>
+                  <td>{{this.from}}</td>
+                  <td>
+                      <a href="/workers/{{this._id}}/edit" >
+                          <button type="button" class="btn btn-success"> Sửa
+                          </button>
+                      </a>
+                      <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{this._id}}">
+                          <button type="button" class="btn btn-danger" >     Xóa
+                          </button>
+                      </a>
+      
+      
+                  </td>
+              </tr>
+              {{/each}}
+          </tbody>
+          </table>
+    </div>
+</div>
+{{!-- Get delete modal --}}
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete worker</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Do you want to delete?
+      </div>
+      <div class="modal-footer">
+        <button id="btn-confirm-delete" type="button" class="btn btn-danger">Xóa</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Form hidden delete --}}
+<form method="POST" name="delete-form"></form>
+
+<script>
+    var deleteModal = document.getElementById('deleteModal')
+    var deleteForm = document.forms['delete-form']
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal 
+        var button = event.relatedTarget
+        // Extract info from data-id attributes
+        var id = button.getAttribute('data-id')
+        // Click on Confirm Delete Button
+        var btnConfirmDelete = document.getElementById('btn-confirm-delete')
+        btnConfirmDelete.onclick = function () {
+            deleteForm.action= '/workers/' + id + '?_method=DELETE'
+            deleteForm.submit()
+        }
+    })
+
+</script>

@@ -22,5 +22,32 @@ function initMap() {
         });
 }
 
-// Fixed Navbar
-let nav=document.getElementById()
+// <!-- Initialize Swiper -->
+var swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+//Chat real-time
+var socket = io();
+var messages = document.getElementById('messages');
+var form = document.getElementById('form');
+var input = document.getElementById('input');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const message= input.value;
+    var named = "ducdung9"
+    if (input.value && named ) {
+    socket.emit('chat message', {message, named});
+    input.value = '';
+    }
+});
+
+socket.on('chat message', function(msg) {
+    var item = document.createElement('li');
+    item.textContent = `${msg.named}:  ${msg.message}`;
+    messages.appendChild(item);
+});
+

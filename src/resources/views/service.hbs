@@ -1,1 +1,29 @@
-<h1>Service Page</h1>
+<div class="main__home">
+    <div class="container">
+        <h1>Nhân viên của chúng tôi</h1>
+        <div class="row mt-4 ">
+            {{#each workers}}
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card_container">
+                    <a href="/workers/{{this.slug}}"><img src="/uploads/{{this.img}}" class="card-img-top member__img" alt="worker"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">{{this.name}}</h4>
+                        <h5 class="card-title">{{this.birth}}</h5>
+                        <h5 class="card-title">{{this.from}}</h5>
+                        <p class="card-text">{{this.experience}}</p>
+                        <h5 class="card-text">Lương theo giờ: {{this.salary}}đ</h5>
+                        <h2 style="color: light-blue ;">Đánh giá</h2>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <br>
+                        <a href="/workers/{{this.slug}}" class="btn btn-primary">Thông tin chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

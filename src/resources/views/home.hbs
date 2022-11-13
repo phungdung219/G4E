@@ -1,3 +1,88 @@
 <div class="main__home">
-    <h1>Home page</h1>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="/img/home/home-banner01.png" alt=""></div>
+        <div class="swiper-slide"><img src="/img/home/home-banner02.png" alt=""></div>
+        <div class="swiper-slide"><img src="/img/home/home-banner03.png" alt=""></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="service_container mt-4">
+        <div class="card" style="width: 18rem;">
+            <div class="img_container"><img src="	https://giupviec88.com/Image/Services/giup-viec-gia-dinh.jpg" class="card-img-top" alt="..."></div>
+            <div class="card-body">
+                <a href="">
+                    <h4 class="card-title"> GIÚP VIỆC Ở LẠI HÀNG ĐẦU VIỆT NAM </h4>
+                </a>
+                <p class="card-text">Giúp việc 88 - Giúp việc ở lại hàng đầu Việt Nam chuyên cung cấp giúp việc chuyên nghiệp, người lao động được đào tạo bài bản, lý lịch rõ ràng, Cam kết dịch vụ tốt nhất tại Hà Nội</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="img_container"><img src="https://giupviec88.com/Image/Services/giup-viec-trong-tre.jpg" class="card-img-top" alt="..."></div>
+            <div class="card-body">
+                <a href="">
+                    <h4 class="card-title"> GIÚP VIỆC Ở LẠI HÀNG ĐẦU VIỆT NAM </h4>
+                </a>
+                <p class="card-text">Giúp việc 88 - Giúp việc ở lại hàng đầu Việt Nam chuyên cung cấp giúp việc chuyên nghiệp, người lao động được đào tạo bài bản, lý lịch rõ ràng, Cam kết dịch vụ tốt nhất tại Hà Nội</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="img_container"><img src="https://giupviec88.com/Image/Services/giup-viec-cham-ong-ba.jpg" class="card-img-top" alt="..."></div>
+            <div class="card-body">
+                <a href="">
+                    <h4 class="card-title"> GIÚP VIỆC Ở LẠI HÀNG ĐẦU VIỆT NAM </h4>
+                </a>
+                <p class="card-text">Giúp việc 88 - Giúp việc ở lại hàng đầu Việt Nam chuyên cung cấp giúp việc chuyên nghiệp, người lao động được đào tạo bài bản, lý lịch rõ ràng, Cam kết dịch vụ tốt nhất tại Hà Nội</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Nhân viên của chúng tôi</h1>
+        <div class="row mt-4 ">
+            {{#each workers}}
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card_container">
+                    <a href="/workers/{{this.slug}}"><img src="/uploads/{{this.img}}" class="card-img-top member__img" alt="worker"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">{{this.name}}</h4>
+                        <h5 class="card-title">{{this.birth}}</h5>
+                        <h5 class="card-title">{{this.from}}</h5>
+                        <p class="card-text">{{this.experience}}</p>
+                        <h5 class="card-text">Lương theo giờ: {{this.salary}}đ</h5>
+                        <h2 style="color: light-blue ;">Đánh giá</h2>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>    
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <br>
+                        <a href="/workers/{{this.slug}}" class="btn btn-primary">Thông tin chi tiết</a>
+                    </div>
+                </div> 
+            </div>
+            {{/each}}
+        </div>
+        <p>{{test}}</p>
+        <h1 class="news_title">Góc tâm hự giúp việc</h1>
+        <ul class="list-group list-group-flush">
+            {{#each posts}}
+            <li class="list-group-item news_card">
+                <div class="post_img">
+                    <a href="{{this.link}}"><img src="{{this.img}}" alt="bài viết"></a>
+                </div>
+                <div class="post_info">
+                    <a href="{{this.link}}">
+                        <h3 class="post__title">{{this.title}}</h3>
+                    </a>
+                    <p class="post__desc">{{this.desc}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        </div>
+        
+    </div>
+    
+    
 </div>

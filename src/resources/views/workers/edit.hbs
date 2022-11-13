@@ -1,0 +1,32 @@
+<div class="mt-4">
+    <div class="container">
+        <h1>Cập nhật nhân viên</h1>
+        <form method="POST" action="/workers/{{worker._id}}?_method=PUT">
+            <div class="form-group mt-4">
+                <label for="full-name">Họ và tên</label>
+                <input type="text" class="form-control" value="{{worker.name}}" id="full-name" placeholder="Enter your name" name="name">
+            </div>
+            <div class="form-group mt-4">
+                <label for="birth">Năm sinh</label>
+                <input type="text" class="form-control" value="{{worker.birth}}" id="birth" placeholder="dien vao" name="birth">
+            </div>
+            <div class="form-group mt-4">
+                <label for="from">Khu vực</label>
+                <input type="text" class="form-control" value="{{worker.from}}" id="from" placeholder="dien vao" name="from">
+            </div>
+            <div class="form-group mt-4">
+                <label for="experience">Kinh nghiệm</label>
+                <input type="text" class="form-control" value="{{worker.experience}}" id="experience" placeholder="experience" name="experience">
+            </div>
+            <div class="form-group mt-4">
+                <label for="salary">Lương</label>
+                <input type="text" class="form-control" value="{{worker.salary}}" id="salary" placeholder="salary" name="salary">
+            </div>
+            <div class="form-group mt-4">
+                <label for="img">Ảnh</label>
+                <input type="text" class="form-control" value="{{worker.img}}" id="img" placeholder="Picture of your self" name="img">
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+    </div>
+</div>

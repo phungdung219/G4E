@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const slug = require('mongoose-slug-generator');
+mongoose.plugin(slug);
 
 const Schema = mongoose.Schema;
 
@@ -8,8 +10,10 @@ const Worker = new Schema({
     from: { type: String},
     experience: { type: String },
     img: {type: String},
-    createdAt: {type: Date, default: Date.now},
-    updatedAt: {type: Date, default: Date.now},
+    salary: {type: String},
+    slug: { type: String, slug: 'name', unique:true }
+  }, {
+    timestamps: true
   });
 
   module.exports= mongoose.model('Worker', Worker);

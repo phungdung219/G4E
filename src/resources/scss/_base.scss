@@ -1,10 +1,38 @@
 .container{
-    max-width: 1000px;
+    max-width: 900px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 10px 35px 0px;
 }
 .main {
     min-height: 400px;
 }
 
-  
-  /* Optional: Makes the sample page fill the window. */
+
+//chat message
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+#form { background: $primary-color; padding: 0.25rem;  display: flex; height: 3rem; box-sizing: border-box;border-radius: 15px; backdrop-filter: blur(10px); }
+#input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+#input:focus { outline: none; }
+#form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+.box-chat { position: fixed; z-index: 999; bottom: 0;  right: 0; max-width: 350px; }
+#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages > li { padding: 0.5rem 1rem;  }
+#messages > li:nth-child(odd) { background: #efefef; }
+
+//direct_contact
+.direct_contact {
+    width: 270px;
+    border: 1px solid $primary-color;
+    box-shadow: $container-shadow;
+    position: fixed;
+    left: 8px;
+    .contact_title {
+        background-color: $primary-color;
+        padding: 10px 5px;
+        color: #fff;
+    }
+    img {
+        width: 100%;
+    }
+}
  

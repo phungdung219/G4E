@@ -1,0 +1,66 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="container emp-profile">
+    <form >
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item trans-list top">
+                <p class="p-2">STT</p>
+                <p class="p-2">Tên người thuê</p>
+                <p class="p-2">Người giúp việc</p>
+                <p class="p-2">Thời gian</p>
+                <p class="p-2">Địa chỉ</p>
+                <p class="p-2">Giá(VND)</p>
+                <p class="p-2">Vào hồi</p>
+            </li>
+            {{#if trans}}
+            {{#each trans}}
+            <li class="list-group-item trans-list ">
+                <p class="p-2">{{sum @index 1}}</p>
+                <p class="p-2">{{this.name}} <br> <b>({{this.account}})</b></p>
+                <p class="p-2">{{this.helper}}</p>
+                <p class="p-2">{{this.time}} / {{this.date}}</p>
+                <p class="p-2">{{this.address}}</p>
+                <p class="p-2">{{this.price}}VND</p>
+                <p class="p-2">{{this.createdAt}}</p>
+            </li>
+            {{/each}}
+            {{else}}
+            <h3 class="note">Bạn chưa có giao dịch nào</h3>
+            {{/if}}
+        </ul>
+            
+    </form>        
+<style>
+  body{
+    background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+}
+.emp-profile{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+    width: 80%;
+}
+.trans-list.top {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3D6EF7;
+}
+.trans-list {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1.5fr 1.5fr 2fr 1fr 1.5fr;
+    column-gap: 5px;
+}
+
+.note {
+    font-size: 40px;
+    line-height: 60px;
+    color: rgba(66, 183, 245, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto;
+}
+</style>
