@@ -10,6 +10,7 @@ const Worker = new Schema({
     from: { type: String},
     experience: { type: String },
     img: {type: String},
+    salary: {type: String},
     slug: { type: String, slug: 'name', unique:true }
   }, {
     timestamps: true

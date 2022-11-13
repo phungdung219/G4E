@@ -22,14 +22,13 @@ class LoginMiddleware {
     }
 
     checkAdmin(req,res,next) {
-        console.log(req.data.role)
         if(req.data.role==='admin') {
             next()
         } else{
             res.render('right',{layout:false})
         }
     }
-
+    
 }
 
 module.exports = new LoginMiddleware

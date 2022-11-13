@@ -43,20 +43,18 @@
                         <a class="nav-link h5" href="/introduce">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link h5" href="/news">Tin tức</a>
+                        <a class="nav-link h5" href="/news?page=1">Tin tức</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link h5 dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Các dịch vụ
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Giúp việc tại nhà</a></li>
-                            <li><a class="dropdown-item" href="#"> Bảo mẫu </a></li>
-                            <li><a class="dropdown-item" href="#">Giúp việc người già</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Xem thêm</a></li>
+                            <li><a class="dropdown-item" href="/service">Giúp việc tại nhà</a></li>
+                            <li><a class="dropdown-item" href="/user/transactions"> Lịch sử giao dịch </a></li>
                         </ul>
                     </li>
+                    {{#ifCond account.role 'admin'}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle h5" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin 
@@ -68,19 +66,24 @@
                             <li><a class="dropdown-item" href="#">SEE ALL</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link h5" href="/about">Về GV4E</a>
-                    </li>
+                    {{/ifCond}}
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form action="/service" method="GET" class="d-flex">
+                    <input class="form-control me-2" name="q" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" >Search</button>
                 </form>
-                <div>
-                    <a style="color: #fff;margin-left:20px" href="/login">Đăng nhập</a> 
+
+                <div class="d-flex align-items-center border border-white rounded-pill" style="padding: 5px;margin-left:10px">
+                    {{#if account}}
+                        <ion-icon style="color: #fff; font-size:30px" name="person-circle-outline"></ion-icon>
+                        <a style="color: #fff;text-decoration:none" href="/user/info">{{account.username}}</a>
+                        {{else}}
+                        <a style="color: #fff;text-decoration:none" href="/login">Đăng nhập</a> 
+                    {{/if}}
                 </div>
             </nav>
 
+            {{#unless href}}
             <div class="direct_contact">
                 <h2 class="contact_title">
                     Hỗ trợ trực tuyến
@@ -93,13 +96,11 @@
                     <li class="list-group-item">CSKH - 0911703000 - 0961004301</li>
                 </ul>
             </div>
-
+            {{/unless}}
             {{{body}}}
 
-
-
             <div class="box-chat" style="padding-bottom: 20px;">
-                <h4 style="color: #3D6EF7"> Hãy gửi phản hồi cho chúng tôi</h4>
+                <h4 style="color: #3D6EF7"> Kênh chat chung</h4>
                 <ul id="messages"></ul>
                 <form id="form" action="">
                     <input id="input" autocomplete="off" /><button>Send</button>

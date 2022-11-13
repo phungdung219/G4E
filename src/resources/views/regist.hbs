@@ -271,17 +271,24 @@ body {
     <div class="form-toggle"></div>
     <div class="form-panel one">
         <div class="form-header">
-            <h1>Đăng nhập</h1>
+            <h1>Đăng kí</h1>
         </div>
         <div class="form-content">
             <form method="POST">
                 <div class="form-group"><label for="username">Tài khoản</label><input type="text" id="username" name="username" required="required" /></div>
                 <div class="form-group"><label for="password">Mật khẩu</label><input type="password" id="password" name="password" required="required" /></div>
-                <div class="form-group"><label class="form-remember"><input type="checkbox" />Remember Me</label><a class="form-recovery" href="#">Quên mật khẩu</a></div>
-                <div class="form-group ">
-                  <a class="form-recovery" href="/regist">Tạo tài khoản</a>
+                <div class="form-group"><label for="confirm_password">Xác nhận mật khẩu</label><input type="password" id="confirm_password" name="confirm_password" required="required" /></div>
+                <div class="form-group"><label for="fullname">Họ và tên</label><input type="fullname" id="fullname" name="fullname" required="required" /></div>
+                <div class="form-group"><label for="number">Số điện thoại</label><input type="text" id="number" name="number" required="required" /></div>
+                <div class="form-group"><label for="email">Địa chỉ email</label><input type="email" id="email" name="email" required="required" /></div>
+                <div class="form-group">
+                  <label for="role">Vị trí</label>
+                  <select name="role" id="role" required="required">
+                    <option name="role1"  value="user">Người dùng</option>
+                    <option name="role2" value="helper">Người giúp việc</option>
+                  </select>
                 </div>
-                <div class="form-group"><button type="submit" >Log In</button></div>
+                <div class="form-group"><button type="submit">Đăng kí</button></div>
             </form>
         </div>
     </div>
@@ -290,31 +297,6 @@ body {
 <div class="pen-footer"><a href="https://www.behance.net/gallery/30478397/Login-Form-UI-Library" target="_blank"><i class="material-icons">arrow_backward</i>View on Behance</a><a href="https://github.com/andyhqtran/UI-Library/tree/master/Login%20Form" target="_blank">View on Github<i class="material-icons">arrow_forward</i></a></div>
 
 <script>
-    $(document).ready(function() {
-  var panelOne = $('.form-panel.two').height(),
-    panelTwo = $('.form-panel.two')[0].scrollHeight;
-
-  $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
-    e.preventDefault();
-
-    $('.form-toggle').addClass('visible');
-    $('.form-panel.one').addClass('hidden');
-    $('.form-panel.two').addClass('active');
-    $('.form').animate({
-      'height': panelTwo
-    }, 200);
-  });
-
-  $('.form-toggle').on('click', function(e) {
-    e.preventDefault();
-    $(this).removeClass('visible');
-    $('.form-panel.one').removeClass('hidden');
-    $('.form-panel.two').removeClass('active');
-    $('.form').animate({
-      'height': panelOne
-    }, 200);
-  });
-});
   
   //set,get cookies
   function setCookie(cname, cvalue, exdays) {
@@ -339,7 +321,20 @@ body {
   return "";
 }
 
- 
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
 </script>
 </body>
 

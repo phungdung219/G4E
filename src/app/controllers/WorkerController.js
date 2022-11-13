@@ -6,19 +6,25 @@ class WorkerController {
     show(req,res,next) {
         Worker.findOne({slug:req.params.slug})
             .then((worker)=>{
-                res.render('workers/show', {worker: MongooseToObject(worker)})
+                res.render('workers/show', {
+                    worker: MongooseToObject(worker),
+                    account: req.data
+                })
             }) 
             .catch(next)
     }
 
     //[get] /workers/create
     create(req,res,next) {
-        res.render('workers/create')
+        res.render('workers/create', {
+            account: req.data
+        })
     }
 
-    //[post] /workers/store
+    //[post] /workers/create
     store(req,res,next) {
         const worker = new Worker( req.body );
+        worker.img = req.file.filename
         worker.save()
         res.redirect('/')
     }
@@ -27,7 +33,8 @@ class WorkerController {
     edit(req,res,next) {
         Worker.findById(req.params.id)
             .then(worker => res.render('workers/edit',{
-                worker : MongooseToObject(worker)
+                worker : MongooseToObject(worker),
+                account: req.data
             }))
             .catch(next)  
     }

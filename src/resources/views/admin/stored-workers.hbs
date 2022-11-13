@@ -1,14 +1,14 @@
 <div class="mt-4">
     <div class="container">
-      <h1>All workers</h1>
+      <h1>Tất cả nhân viên</h1>
       <table class="table">
           <thead>
               <tr>
               <th scope="col">#</th>
-              <th scope="col">Id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Birth</th>
-              <th scope="col" colspan="2">From</th>
+              <th scope="col">Số ID</th>
+              <th scope="col">Tên</th>
+              <th scope="col">Năm sinh</th>
+              <th scope="col" colspan="2">Khu vực</th>
               </tr>
           </thead>
           <tbody>
@@ -21,11 +21,11 @@
                   <td>{{this.from}}</td>
                   <td>
                       <a href="/workers/{{this._id}}/edit" >
-                          <button type="button" class="btn btn-success"> Update
+                          <button type="button" class="btn btn-success"> Sửa
                           </button>
                       </a>
                       <a href="" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{this._id}}">
-                          <button type="button" class="btn btn-danger" >     Delete
+                          <button type="button" class="btn btn-danger" >     Xóa
                           </button>
                       </a>
       
@@ -49,8 +49,8 @@
         Do you want to delete?
       </div>
       <div class="modal-footer">
-        <button id="btn-confirm-delete" type="button" class="btn btn-danger">Delete</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="btn-confirm-delete" type="button" class="btn btn-danger">Xóa</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
       </div>
     </div>
   </div>

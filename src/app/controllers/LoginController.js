@@ -1,5 +1,9 @@
 const Account = require('../models/Account')
 const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+let alert = require('alert'); 
+
 
 
 class LoginController {
@@ -11,21 +15,21 @@ class LoginController {
 
     //[POST] / login
     signIn(req,res,next) {
+        
         Account.findOne({
             username: req.body.username,
-            password: req.body.password
+            
         })
         .then(data=>{
-            if(data){
+            if(bcrypt.compare(req.body.password, data.password)){
                 var token = jwt.sign({_id: data._id},'mk')
                 res.cookie('token',token).redirect('/')
-                
             }else{
-                res.json('fail')
+                res.render('login');
             }
         })
         .catch(err=>{
-            res.status(500).json('lỗi server')
+            res.render('login');
         })
     }
 }

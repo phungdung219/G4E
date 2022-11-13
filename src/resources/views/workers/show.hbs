@@ -1,12 +1,12 @@
-<div class="container">
-    <div class="card" style="border:red 1px solid">
-        <a href="/workers/{{this.slug}}"><img src="{{worker.img}}" class="card-img-top" alt="..."></a>
-        <div class="card-body">
-            <h5 class="card-title">{{worker.name}}</h5>
-            <h5 class="card-title">{{worker.birth}}</h5>
-            <p class="card-text">{{worker.experience}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+<div class="container mt-4 d-flex text-align-center">
+    <div class="card" style="border:red 1px solid; width:300px">
+        <a class="col" href="/user/checkout/{{worker.slug}}"><img src="/uploads/{{worker.img}}" class="card-img-top" alt="..."></a>
     </div>
+    <div class="card-body col">
+        <h5 class="card-title">{{worker.name}}</h5>
+        <h5 class="card-title">{{worker.birth}}</h5>
+        <p class="card-text">{{worker.experience}}</p>
+        <a href="/user/checkout/{{worker.slug}}" class="btn btn-primary">Thuê người giúp việc</a>
+    </div>  
 
 </div>

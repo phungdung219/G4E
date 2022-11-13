@@ -2,7 +2,9 @@ class IntroduceController {
 
     //[get] / introduce
     index(req, res) {
-        res.render('introduce');
+        res.render('introduce', {
+            account:req.data
+        });
     }
 
     show(req,res) {

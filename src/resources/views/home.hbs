@@ -43,13 +43,13 @@
             {{#each workers}}
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card_container">
-                    <a href="/workers/{{this.slug}}"><img src="{{this.img}}" class="card-img-top member__img" alt="worker"></a>
+                    <a href="/workers/{{this.slug}}"><img src="/uploads/{{this.img}}" class="card-img-top member__img" alt="worker"></a>
                     <div class="card-body">
                         <h4 class="card-title">{{this.name}}</h4>
                         <h5 class="card-title">{{this.birth}}</h5>
                         <h5 class="card-title">{{this.from}}</h5>
                         <p class="card-text">{{this.experience}}</p>
-                        
+                        <h5 class="card-text">Lương theo giờ: {{this.salary}}đ</h5>
                         <h2 style="color: light-blue ;">Đánh giá</h2>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>    
@@ -62,6 +62,7 @@
                 </div> 
             </div>
             {{/each}}
+        </div>
         <p>{{test}}</p>
         <h1 class="news_title">Góc tâm hự giúp việc</h1>
         <ul class="list-group list-group-flush">

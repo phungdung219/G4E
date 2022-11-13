@@ -7,7 +7,9 @@ class AdminController {
     storedWorkers(req,res,next) {
         Worker.find({})
             .then(workers => res.render('admin/stored-workers', {
-                workers: manyMongooseToObject(workers)
+                workers: manyMongooseToObject(workers),
+                account: req.data
+
             }))
             .catch(next)
     }

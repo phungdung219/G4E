@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const methodOverride = require('method-override')
 const jwt = require('jsonwebtoken')
 var cookieParser = require('cookie-parser')
+const multer = require('multer')
 
 const path = require('path')
 const app = express()
@@ -36,8 +37,12 @@ route(app)
 app.engine('hbs', handlebars({
   extname: 'hbs',
   helpers: {
-    sum: (a,b) => a+b
-  }
+    sum: (a,b) => a+b,
+    ifCond: (v1,v2,options) => { if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);}
+  },
 }))
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'resources','views'))
@@ -48,6 +53,7 @@ io.on('connection', (socket) => {
     io.emit('chat message', msg);
   });
 });
+
 
 
 server.listen(port, () => {
